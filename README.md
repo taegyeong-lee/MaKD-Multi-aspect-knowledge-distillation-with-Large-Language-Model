@@ -13,6 +13,7 @@ Recent advancements in deep learning have significantly improved performance on 
 
 ## News
 - [2025/01/13] We released multi-aspect question.txt
+- [2025/01/14] We released Logit extraction code and MaKD Training code.
 
 ## Approach
 ### **1. Multi-aspect question generation and logit extraction**
@@ -25,11 +26,13 @@ Recent advancements in deep learning have significantly improved performance on 
 <img src="https://github.com/user-attachments/assets/8813ab85-8d71-4355-ac34-d6e7136c492d" height="300" alt="Image description">
 
 ## Usage
-### **0. Install InternVL 2.5(MLLM) for extracting logits on multi-aspect questions (<a href='https://internvl.readthedocs.io/en/latest/get_started/installation.html'>install document</a>).**
-
-To obtain Yes/No logits for multi-aspect questions using MLLM, you need to install InternVL2.5. 
+### 0. Preparation stage
+- Install InternVL 2.5(MLLM) for extracting logits on multi-aspect questions (<a href='https://internvl.readthedocs.io/en/latest/get_started/installation.html'>install document</a>).**
+- To obtain Yes/No logits for multi-aspect questions using MLLM, you need to install InternVL2.5. 
 Then, replace the temporary files ``modeling_internvl_chat.py``, ``transformers\tokenization_utils_base.py``, and ``transformers\generation\utils.py`` with the our github files from ``InternVL_logits folder``.
-
+- Download the fine-grained datasets (Caltech101, OxfordPets, CUB-2011, Flowers, StanfordCars, DTD, Mini-ImageNet, FGVC Craft) from here.
+- Download the multi-aspect questions we created using GPT-4 from here.
+- Download the multi-aspect logits extracted using InternVL-2.5 8B from here.
 
 ### **1. Create multi-aspect questions suitable for the dataset using ChatGPT.**
 We create a total of $N$ multi-aspect questions based on the class labels of the dataset using LLM.
@@ -58,8 +61,17 @@ Using an MLLM, we input the dataset and the generated multi-aspect questions, pr
 We then extract the logits corresponding to yes and no tokens, and apply the softmax function to both the yes and no logits. 
 We use the softmax results of the yes logits as the targets and generate multi-aspect-logits.json.
 
-You need to change **path, multi_aspect_questions_path, image_folder_path, output_json_path.**
+You need to change ``path``, ``multi_aspect_questions_path``, ``image_folder_path``, ``output_json_path``.
 
 ```
 python InternVL/make_makd_logits_json.py
+```
+
+### 3. Training neural networks with MaKD on fine-grained datasets.
+
+You need to modify ``configs/fine_grained/makd.yaml`` according to the fine-grained dataset you want to train on. 
+Then, run the following command.
+
+```
+python tools/our_train.py configs/fine_grained/makd.yaml
 ```
