@@ -77,5 +77,5 @@ python tools/our_train.py configs/fine_grained/makd.yaml
 ```
 
 
-### Acknowledgement
+## Acknowledgement
 Sincere gratitude to the contributors of mdistiller and InternVL for your distinguished efforts.
