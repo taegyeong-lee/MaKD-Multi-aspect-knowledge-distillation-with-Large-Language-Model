@@ -1,0 +1,32 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "fine_grained"
+  PROJECT: "fine_grained"
+DATASET:
+  TYPE: "oxfordpets"
+  NUM_CLASS: 37
+  ASPECT_JSON: "oxfordpets.json"
+  TRAIN_IMAGE_PATH: "oxfordpets"
+  TEST_IMAGE_PATH: "oxfordpets"
+  NUM_WORKERS: 1
+  TEST:
+    BATCH_SIZE: 16
+DISTILLER:
+  TYPE: "MaKD"
+  TEACHER: ""
+  STUDENT: "MobileNetV1"
+SOLVER:
+  BATCH_SIZE: 16
+  EPOCHS: 240
+  LR: 0.01
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+  TRAINER: "makd"
+MaKD:
+  ASPECT_NUM: 50
+  TEMPERATURE: 1
+  ALPHA: 4.0
+  CE_WEIGHT: 1.0
+LOG:
+  TENSORBOARD_FREQ: 50
+  SAVE_CHECKPOINT_FREQ: 10
