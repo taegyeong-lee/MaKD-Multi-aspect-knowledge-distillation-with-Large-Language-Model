@@ -28,7 +28,7 @@ Recent advancements in deep learning have significantly improved performance on 
 ### **0. Install InternVL 2.5(MLLM) for extracting logits on multi-aspect questions (<a href='https://internvl.readthedocs.io/en/latest/get_started/installation.html'>install document</a>).**
 
 To obtain Yes/No logits for multi-aspect questions using MLLM, you need to install InternVL2.5. 
-Then, replace the temporary files **modeling_internvl_chat.py, transformers\tokenization_utils_base.py, and transformers\generation\utils.py** with the our github files from InternVL_logits folder.
+Then, replace the temporary files ``modeling_internvl_chat.py``, ``transformers\tokenization_utils_base.py``, and ``transformers\generation\utils.py`` with the our github files from ``InternVL_logits folder``.
 
 
 ### **1. Create multi-aspect questions suitable for the dataset using ChatGPT.**
