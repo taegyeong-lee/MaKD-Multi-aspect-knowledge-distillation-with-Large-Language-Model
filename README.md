@@ -17,13 +17,13 @@ Recent advancements in deep learning have significantly improved performance on 
 
 ## Approach
 ### **1. Multi-aspect question generation and logit extraction**
-<img src="figures/approach01.png" height="400" alt="Image description">
+<img src="figures/approach02.png" height="400" alt="Image description">
 
 
 ### **2. Mutli-aspect logit distillation**
 
 
-<img src="figures/approach02.png" height="300" alt="Image description">
+<img src="figures/approach01.png" height="300" alt="Image description">
 
 ## Usage
 ### 0. Preparation stage
