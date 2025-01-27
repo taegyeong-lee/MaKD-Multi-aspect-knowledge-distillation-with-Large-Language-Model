@@ -15,42 +15,38 @@ FLOWERS_LABEL       = ['alpine_sea_holly', 'anthurium', 'artichoke', 'azalea', '
 EUROSAT_LABEL       = ['AnnualCrop', 'Forest', 'HerbaceousVegetation', 'Highway', 'Industrial', 'Pasture', 'PermanentCrop', 'Residential', 'River', 'SeaLake']
 
 
-file_path = "C:\\Users\\user\\Desktop\\MaKD\\raw_aspects\\internvl2-8b-mini_imagenet-aligned_aspect50.pkl"
+file_path = "C:\\Users\\user\\Desktop\\MaKD\\raw_aspects\\internvl2-8b_caltech101-aligned_aspect50.pkl"
 with open(file_path, 'rb') as file:
     a_data = pickle.load(file)
 
-for item in a_data:
-
-    print(item['aspect'])
-
 #
-# file_path = "C:\\Users\\user\\Downloads\\cub2011.pkl"
-# with open(file_path, 'rb') as file:
-#     data = pickle.load(file)
+file_path = "C:\\Users\\user\\Downloads\\caltech101.pkl"
+with open(file_path, 'rb') as file:
+    data = pickle.load(file)
 #
 # # Convert all labels to lowercase
-# lowercase_labels = [label.lower() for label in CUB2011_LABEL]
-# d = {}
+lowercase_labels = [label.lower() for label in CALTECH101_LABEL]
+d = {}
 #
-# import json
+import json
 #
-# for idx, item in enumerate(data[1]):
-#     label = item[1].lower()
-#     label_index = lowercase_labels.index(label)
-#     file_name =f"{label}_{label_index}_{idx}"
-#     aspect_list = []
-#     # for i in range(0,50):
-#     #     aspect_dict = a_data[i]
-#     #     aspect_list.append(float(a_data[i]['data'][idx][0].cpu()))
-#
-#     d[file_name] = aspect_list
+for idx, item in enumerate(data[0]):
+    label = item[1].lower()
+    label_index = lowercase_labels.index(label)
+    file_name =f"{label}_{label_index}_{idx}"
+    aspect_list = []
+    for i in range(0,50):
+        aspect_dict = a_data[i]
+        aspect_list.append(float(a_data[i]['data'][idx][0].cpu()))
+
+        d[file_name] = aspect_list
 #
 #     output_image_path = f"C:\\Users\\user\\Desktop\\MaKD\\datasets\\test/cub2011\\{file_name}.png"
 #     item[0].save(output_image_path)
 
 #     # JSON 파일로 저장
-# with open("flowers.json", "w", encoding="utf-8") as json_file:
-#     json.dump(d, json_file, ensure_ascii=False, indent=4)
+with open("caltech101.json", "w", encoding="utf-8") as json_file:
+    json.dump(d, json_file, ensure_ascii=False, indent=4)
 #
 
 

@@ -20,12 +20,12 @@ EUROSAT_LABEL       = ['AnnualCrop', 'Forest', 'HerbaceousVegetation', 'Highway'
 #     a_data = pickle.load(file)
 
 
-file_path = "C:\\Users\\user\\Downloads\\flowers.pkl"
+file_path = "C:\\Users\\user\\Downloads\\caltech101.pkl"
 with open(file_path, 'rb') as file:
     data = pickle.load(file)
 
 # Convert all labels to lowercase
-lowercase_labels = [label.lower() for label in FLOWERS_LABEL]
+lowercase_labels = [label.lower() for label in CALTECH101_LABEL]
 d = {}
 
 import json
@@ -41,7 +41,7 @@ for idx, item in enumerate(data[1]):
 
     d[file_name] = aspect_list
 
-    output_image_path = f"C:\\Users\\user\\Desktop\\MaKD\\datasets\\test/flowers\\{file_name}.png"
+    output_image_path = f"C:\\Users\\user\\Desktop\\MaKD\\datasets\\test/caltech101\\{file_name}.png"
     item[0].save(output_image_path)
 
 #     # JSON 파일로 저장

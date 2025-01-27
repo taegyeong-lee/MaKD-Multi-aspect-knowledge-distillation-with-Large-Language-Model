@@ -8,12 +8,15 @@ Soyeong Kwon,
 Taehwan Kim
 <br/>
 
+https://www.arxiv.org/abs/2501.13341
+
 ## Abstract
 Recent advancements in deep learning have significantly improved performance on computer vision tasks. Previous image classification methods primarily modify model architectures or add features, and they optimize models using cross-entropy loss on class logits. Since they focus on classifying images with considering class labels, these methods may struggle to learn various \emph{aspects} of classes (e.g., natural positions and shape changes). In contrast, humans classify images by naturally referring to multi-aspects such as context, shape, color, and other features. Inspired by this, rethinking the previous approach from a novel view, we propose a multi-aspect knowledge distillation method using Multimodal Large Language Models (MLLMs). Our approach involves: 1) querying Large Language Model with multi-aspect questions relevant to the knowledge we want to transfer to the model, 2) extracting corresponding logits from MLLM, and 3) expanding the model's output dimensions to distill these multi-aspect logits. We then apply cross-entropy loss to class logits and binary cross-entropy loss to multi-aspect logits. Through our method, the model can learn not only the knowledge about visual aspects but also the abstract and complex aspects that require a deeper understanding. We primarily apply our method to image classification, and to explore the potential for extending our model, we expand it to other tasks, such as object detection. In all experimental results, our method improves the performance of the baselines. Additionally, we analyze the effect of multi-aspect knowledge distillation. These results demonstrate that our method can transfer knowledge about various aspects to the model and the aspect knowledge can enhance model performance in computer vision tasks. This paper demonstrates the great potential of multi-aspect knowledge distillation, and we believe it offers a promising direction for future research in computer vision and beyond.
 
 ## News
 - [2025/01/13] We released multi-aspect question.txt
 - [2025/01/14] We released Logit extraction code and MaKD Training code.
+- [2025/01/27] We released Datasets and Logits files (Caltech101, OxfordPets, StanfordPets, Flowers, DTD)
 
 ## Approach
 ### **1. Multi-aspect question generation and logit extraction**
@@ -30,9 +33,9 @@ Recent advancements in deep learning have significantly improved performance on 
 - Install InternVL 2.5(MLLM) for extracting logits on multi-aspect questions (<a href='https://internvl.readthedocs.io/en/latest/get_started/installation.html'>install document</a>).**
 - To obtain Yes/No logits for multi-aspect questions using MLLM, you need to install InternVL2.5. 
 Then, replace the temporary files ``modeling_internvl_chat.py``, ``transformers\tokenization_utils_base.py``, and ``transformers\generation\utils.py`` with the our github files from ``InternVL_logits folder``.
-- Download the fine-grained datasets (Caltech101, OxfordPets, CUB-2011, Flowers, StanfordCars, DTD, Mini-ImageNet, FGVC Craft) from here.
-- Download the multi-aspect questions we created using GPT-4 from here.
-- Download the multi-aspect logits extracted using InternVL-2.5 8B from here.
+- Download the fine-grained datasets (Caltech101, OxfordPets, CUB-2011, Flowers, StanfordCars, DTD, Mini-ImageNet, FGVC Craft) from <a href="https://drive.google.com/file/d/1cdg5uW526R_Ut38aVc5dpSOTbqrZA1gM/view?usp=sharing">here</a>.
+- Download the multi-aspect questions we created using GPT-4 from <a href="https://drive.google.com/file/d/1yIw5XNWOXN2lt_1l4OFhnWvIFouZBXDv/view?usp=sharing">here</a>.
+- Download the multi-aspect logits extracted using InternVL-2.5 8B from <a href="https://drive.google.com/file/d/1A5sKlqi3DrFAlFS1O9n8GwcVRJCjO_lu/view?usp=sharing">here</a>.
 
 ### **1. Create multi-aspect questions suitable for the dataset using ChatGPT.**
 We create a total of $N$ multi-aspect questions based on the class labels of the dataset using LLM.
