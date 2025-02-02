@@ -79,6 +79,10 @@ Then, run the following command.
 python tools/our_train.py configs/fine_grained/makd.yaml
 ```
 
+### 4. Experiment results.
+
+<img src="figures/result.png" height="600" alt="Image description">
+
 
 ## Acknowledgement
 Sincere gratitude to the contributors of mdistiller and InternVL for your distinguished efforts.
