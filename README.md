@@ -67,7 +67,7 @@ We use the softmax results of the yes logits as the targets and generate multi-a
 You need to change ``path``, ``multi_aspect_questions_path``, ``image_folder_path``, ``output_json_path``.
 
 ```
-python InternVL/make_makd_logits_json.py
+python InternVL_logits/make_makd_logits_json.py
 ```
 
 ### 3. Training neural networks with MaKD on fine-grained datasets.
