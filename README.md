@@ -43,13 +43,13 @@ import importlib.util
 module_name = model.chat.__module__
 spec = importlib.util.find_spec(module_name)
 if spec and spec.origin:
-    print(spec.origin)  # 해당 모듈의 파일 경로 출력
+    print(spec.origin) 
     
 import inspect
 import transformers
 
 try:
-    from transformers import AutoModel  # 만약 실제 존재하는 클래스라면
+    from transformers import AutoModel 
     file_path = inspect.getfile(AutoModel)
     print(f"AutoTrained is defined in: {file_path}")
 except ImportError:
