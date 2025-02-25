@@ -36,7 +36,27 @@ Then, replace the temporary files ``modeling_internvl_chat.py``, ``transformers\
 - Download the fine-grained datasets (Caltech101, OxfordPets, CUB-2011, Flowers, StanfordCars, DTD, Mini-ImageNet, FGVC Craft) from <a href="https://drive.google.com/file/d/1cdg5uW526R_Ut38aVc5dpSOTbqrZA1gM/view?usp=sharing">here</a>.
 - Download the multi-aspect questions we created using GPT-4 from <a href="https://drive.google.com/file/d/1yIw5XNWOXN2lt_1l4OFhnWvIFouZBXDv/view?usp=sharing">here</a>.
 - Download the multi-aspect logits extracted using InternVL-2.5 8B from <a href="https://drive.google.com/file/d/1A5sKlqi3DrFAlFS1O9n8GwcVRJCjO_lu/view?usp=sharing">here</a>.
+- You can easily find the installation path of the Transformer and the temporary file path of Hugging Face using the code below.
+```
+import importlib.util
 
+module_name = model.chat.__module__
+spec = importlib.util.find_spec(module_name)
+if spec and spec.origin:
+    print(spec.origin)  # 해당 모듈의 파일 경로 출력
+    
+import inspect
+import transformers
+
+try:
+    from transformers import AutoModel  # 만약 실제 존재하는 클래스라면
+    file_path = inspect.getfile(AutoModel)
+    print(f"AutoTrained is defined in: {file_path}")
+except ImportError:
+    print("AutoTrained is not found in transformers.")
+except TypeError:
+    print("Cannot determine file location.")
+```
 ### **1. Create multi-aspect questions suitable for the dataset using ChatGPT.**
 We create a total of $N$ multi-aspect questions based on the class labels of the dataset using LLM.
 Then, considering visual, categorical, and environmental aspects, we filter and select $Q$ multi-aspect questions using the LLM.
