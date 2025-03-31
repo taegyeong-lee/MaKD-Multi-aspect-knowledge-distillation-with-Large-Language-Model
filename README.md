@@ -17,6 +17,7 @@ Recent advancements in deep learning have significantly improved performance on 
 - [2025/01/13] We released multi-aspect question.txt
 - [2025/01/14] We released Logit extraction code and MaKD Training code.
 - [2025/01/27] We released Datasets and Logits files (Caltech101, OxfordPets, StanfordPets, Flowers, DTD)
+- [2025/03/31] **Our paper has been accepted to the CVPR 2025 Workshop (FGVC12) and will appear in the official CVPR proceedings (8 pages).**
 
 ## Approach
 ### **1. Multi-aspect question generation and logit extraction**
