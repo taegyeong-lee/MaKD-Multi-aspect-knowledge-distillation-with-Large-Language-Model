@@ -1,5 +1,7 @@
 # Multi-aspect Knowledge Distillation with Large Language-Model
 
+**Our paper has been accepted to the CVPR 2025 Workshop (FGVC12) and will appear in the official CVPR proceedings (8 pages).**
+
 This repository is the official implementation of **Multi-aspect Knowledge Distillation with Large Language-Model**.
 <br/>
 **Taegyeong Lee*** ,
