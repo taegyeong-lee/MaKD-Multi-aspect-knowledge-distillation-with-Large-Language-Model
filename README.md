@@ -1,4 +1,4 @@
-# Multi-aspect Knowledge Distillation with Large Language-Model
+# Multi-aspect Knowledge Distillation with Large Language-Model, CVPRW 2025
 
 **Our paper has been accepted to the CVPR 2025 Workshop (FGVC12) and will appear in the official CVPR proceedings (8 pages).**
 
