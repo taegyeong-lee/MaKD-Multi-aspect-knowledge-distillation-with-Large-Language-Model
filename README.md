@@ -1,14 +1,6 @@
 # Multi-aspect Knowledge Distillation with Large Language-Model, CVPRW 2025
 
-**Our paper has been accepted to the CVPR 2025 Workshop (FGVC12) and will appear in the official CVPR proceedings (8 pages).**
-
 This repository is the official implementation of **Multi-aspect Knowledge Distillation with Large Language-Model**.
-<br/>
-**Taegyeong Lee*** ,
-**Jinsik Bang***,
-Soyeong Kwon, 
-Taehwan Kim
-<br/>
 
 https://www.arxiv.org/abs/2501.13341
 
@@ -19,7 +11,7 @@ Recent advancements in deep learning have significantly improved performance on 
 - [2025/01/13] We released multi-aspect question.txt
 - [2025/01/14] We released Logit extraction code and MaKD Training code.
 - [2025/01/27] We released Datasets and Logits files (Caltech101, OxfordPets, StanfordPets, Flowers, DTD)
-- [2025/03/31] **Our paper has been accepted to the CVPR 2025 Workshop (FGVC12) and will appear in the official CVPR proceedings (8 pages).**
+- [2025/03/31] **Our paper has been accepted to the CVPR 2025 Workshop (FGVC12)**
 
 ## Approach
 ### **1. Multi-aspect question generation and logit extraction**
@@ -33,7 +25,7 @@ Recent advancements in deep learning have significantly improved performance on 
 
 ## Usage
 ### 0. Preparation stage
-- Install InternVL 2.5(MLLM) for extracting logits on multi-aspect questions (<a href='https://internvl.readthedocs.io/en/latest/get_started/installation.html'>install document</a>).**
+- Install InternVL 2.5(MLLM) for extracting logits on multi-aspect questions (<a href='https://internvl.readthedocs.io/en/latest/get_started/installation.html'>install document</a>).
 - To obtain Yes/No logits for multi-aspect questions using MLLM, you need to install InternVL2.5.
 - You can apply internvl_logits/simple_make_makd_logits_json.py ! (you can select simple version or previous version)
 - Previous version : Then, replace the temporary files ``modeling_internvl_chat.py``, ``transformers\tokenization_utils_base.py``, and ``transformers\generation\utils.py`` with the our github files from ``InternVL_logits folder``.
