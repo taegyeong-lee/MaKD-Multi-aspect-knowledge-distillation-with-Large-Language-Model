@@ -68,12 +68,8 @@ We generate questions about aspects to be transferred to the model from the LLM.
 Using an MLLM, we input the dataset and the generated multi-aspect questions, prompting it to answer yes or no. 
 We then extract the logits corresponding to yes and no tokens, and apply the softmax function to both the yes and no logits. 
 We use the softmax results of the yes logits as the targets and generate multi-aspect-logits.json.
-**Simple version :**
-```
-python InternVL_logits/simple_make_makd_logits_json.py
-```
 
-**Previous version :**
+**version :**
 You need to change ``path``, ``multi_aspect_questions_path``, ``image_folder_path``, ``output_json_path``.
 
 ```
