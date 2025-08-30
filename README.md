@@ -84,3 +84,14 @@ python tools/our_train.py configs/fine_grained/makd.yaml
 
 ## Acknowledgement
 Sincere gratitude to the contributors of mdistiller and InternVL for your distinguished efforts.
+
+## Citation
+```
+@inproceedings{lee2025multi,
+  title={Multi-aspect Knowledge Distillation with Large Language Model},
+  author={Lee, Taegyeong and Bang, Jinsik and Kwon, Soyeong and Kim, Taehwan},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={2121--2130},
+  year={2025}
+}
+```
